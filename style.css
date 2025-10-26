@@ -1,0 +1,374 @@
+/* --------- GLOBAL --------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0A1322;
+  color: #FFFFFF;
+  scroll-behavior: smooth;
+}
+
+/* Default section spacing (kept generous for a portfolio) */
+section {
+  padding: 120px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: rgba(13, 17, 23, 0.85);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #D1D5DB;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #3B82F6;
+}
+
+/* ===== HERO ===== */
+/* ===== Adjusted HERO (centered like screenshot) ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 140px 20px 100px;
+  background: radial-gradient(circle at top, #0D1117 0%, #0A1322 100%);
+}
+
+.profile-pic {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 4px solid #3B82F6;
+  box-shadow: 0 0 25px rgba(59,130,246,0.4);
+  margin-bottom: 40px;
+}
+
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-style: italic;
+  color: #D1D5DB;
+  margin-bottom: 10px;
+}
+
+.hero-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: #D1D5DB;
+}
+
+.status .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #8FFF00;
+  box-shadow: 0 0 10px #8FFF00;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.btn-small {
+  border: 1px solid #3B82F6;
+  color: #fff;
+  background: transparent;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn-small:hover {
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+/* ===== CERTIFICATES ===== */
+.cert-gallery, .extra-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.cert-gallery img, .extra-gallery img {
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid rgba(59,130,246,0.3);
+  box-shadow: 0 0 15px rgba(59,130,246,0.15);
+  transition: 0.3s;
+}
+
+.cert-gallery img:hover, .extra-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(59,130,246,0.4);
+}
+
+
+/* ===== Universal Card Design ===== */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+  border-radius: 20px;
+  padding: 50px;
+  max-width: 900px;
+  width: 100%;
+  animation: float 5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Headings: bold + italic (as requested) */
+h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 18px;
+  text-align: center;
+  color: #E8EEF8;
+}
+
+/* Normal text (paragraphs, list items, spans) — NOT bold */
+p, li, span {
+  font-weight: 400;
+  color: #D1D5DB;
+  line-height: 1.7;
+}
+
+/* ===== Bio Data ===== */
+.bio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  text-align: left;
+}
+
+/* ===== Skills ===== */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill:hover {
+  background: #3B82F6;
+  color: #fff;
+}
+
+/* ===== Projects ===== */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 15px #3B82F6;
+}
+
+/* ===== Lists ===== */
+.cert-list, .extra ul {
+  list-style: square inside;
+  color: #D1D5DB;
+  line-height: 1.8;
+}
+
+/* ===== Contact ===== */
+.contact-info {
+  margin-top: 20px;
+  color: #D1D5DB;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.contact-info a {
+  color: #3B82F6;
+  text-decoration: none;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #0D1117;
+  color: #D1D5DB;
+  margin-top: 60px;
+}
+
+/* ===== Animations ===== */
+/* pulse for status dot */
+@keyframes pulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+  100% { opacity: 0.7; transform: scale(1); }
+}
+
+/* floating animation used for profile pic & cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 100px 40px;
+    gap: 36px;
+  }
+
+  .hero-quote { font-size: 2.4rem; max-width: 520px; }
+  .hero-name { font-size: 1.8rem; }
+  .profile-pic { width: 240px; height: 240px; }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    padding: 80px 25px;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  /* stack hero on small screens */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .hero-quote { font-size: 1.7rem; }
+  .hero-name { font-size: 1.4rem; letter-spacing: 1px; }
+  .profile-pic { width: 180px; height: 180px; }
+}
+/* ===== Floating Transparent Shapes for Skills ===== */
+.skill-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-bg .shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape1 {
+  width: 180px;
+  height: 180px;
+  background: #3B82F6;
+  top: -40px;
+  left: -60px;
+}
+
+.shape2 {
+  width: 150px;
+  height: 150px;
+  background: #9333EA;
+  bottom: -40px;
+  right: -30px;
+  animation-delay: 2s;
+}
+
+.shape3 {
+  width: 120px;
+  height: 120px;
+  background: #14B8A6;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 4s;
+}
+
+/* Make skills pop on hover */
+.skill {
+  background: rgba(59,130,246,0.08);
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(59,130,246,0.2);
+}
+
+.skill:hover {
+  background: rgba(59,130,246,0.3);
+  box-shadow: 0 0 15px rgba(59,130,246,0.4);
+  color: #fff;
+}
+
